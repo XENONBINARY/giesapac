@@ -1,0 +1,184 @@
+import { Linkedin, GraduationCap, Users, ExternalLink, Globe } from 'lucide-react';
+
+export default function App() {
+  const countries = [
+    { name: 'South Korea', flag: '🇰🇷' },
+    { name: 'Japan', flag: '🇯🇵' },
+    { name: 'China', flag: '🇨🇳' },
+    { name: 'Singapore', flag: '🇸🇬' },
+    { name: 'Australia', flag: '🇦🇺' },
+    { name: 'India', flag: '🇮🇳' },
+    { name: 'Taiwan', flag: '🇹🇼' },
+    { name: 'Hong Kong', flag: '🇭🇰' },
+  ];
+
+  const resources = [
+    {
+      title: 'iMBA Program Portal',
+      description: 'Access course materials and program resources',
+      icon: GraduationCap,
+      href: '#',
+      color: 'orange',
+    },
+    {
+      title: 'Gies LinkedIn',
+      description: 'Official Gies College of Business LinkedIn page',
+      icon: Linkedin,
+      href: '#',
+      color: 'navy',
+    },
+    {
+      title: 'APAC LinkedIn Page',
+      description: 'Connect with the APAC chapter community',
+      icon: Users,
+      href: '#',
+      color: 'orange',
+    },
+    {
+      title: 'Contact Chapter President',
+      description: 'Reach out for questions or collaboration',
+      icon: ExternalLink,
+      href: '#',
+      color: 'navy',
+    },
+    {
+      title: 'iDegrees GBA',
+      description: 'The Graduate Business Association for all Gies iDegrees programs — iMBA, iMSA, and iMSM',
+      icon: Globe,
+      href: 'https://www.idegreesgba.org',
+      color: 'orange',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-[#13294B] text-white overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1738573626155-56c83aafe7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhJTIwcGFjaWZpYyUyMG1hcCUyMGJsdWV8ZW58MXx8fHwxNzc0OTcyOTA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-6">
+              Gies iMBA — Asia Pacific Chapter
+            </h1>
+            <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white/90">
+              Connecting iMBA, iMSA, and iMSM students and alumni across the Asia-Pacific region.
+            </p>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#E84A27] hover:bg-[#d43d1a] text-white px-8 py-4 rounded-lg transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+              Join the Community
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl mb-6 text-[#13294B] text-center">
+              What is Gies APAC?
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Gies APAC is a student-led regional chapter supporting Gies graduate students across the Asia-Pacific region through networking opportunities, shared resources, and community events. Open to all current students and alumni in the iMBA, iMSA, and iMSM programs. Gies APAC is also a proud member of the iGBA International Chapter Leadership committee, which coordinates Gies iDegrees engagement and activities for members located outside of North America.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl text-center mb-12 text-[#13294B]">
+            Our Community Across APAC
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+            {countries.map((country) => (
+              <div
+                key={country.name}
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center border border-gray-100"
+              >
+                <div className="text-5xl mb-3">{country.flag}</div>
+                <h3 className="text-[#13294B]">{country.name}</h3>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-700">
+            Don't see your country? Get in touch.
+          </p>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl text-center mb-12 text-[#13294B]">
+            Upcoming Events & Meetups
+          </h2>
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-lg text-gray-700 mb-6">
+              No upcoming events scheduled. Follow our LinkedIn page for the latest announcements.
+            </p>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#E84A27] hover:bg-[#d43d1a] text-white px-8 py-4 rounded-lg transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+              Follow on LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl text-center mb-12 text-[#13294B]">
+            Resources
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {resources.map((resource, index) => (
+              <a
+                key={index}
+                href={resource.href}
+                target={resource.href.startsWith('http') ? '_blank' : undefined}
+                rel={resource.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={`p-6 rounded-lg shadow-sm hover:shadow-md transition-all group ${
+                  resource.color === 'orange'
+                    ? 'bg-[#E84A27] text-white hover:bg-[#d43d1a]'
+                    : 'bg-[#13294B] text-white hover:bg-[#0f1f3a]'
+                }`}
+              >
+                <resource.icon className="w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-lg mb-2">{resource.title}</h3>
+                <p className="text-sm opacity-90">{resource.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-[#13294B] text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-sm text-white/80">
+            Gies APAC is a student-led organization. Not officially affiliated with the University of Illinois Gies College of Business.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
