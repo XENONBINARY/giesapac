@@ -1,184 +1,496 @@
-import { Linkedin, GraduationCap, Users, ExternalLink, Globe } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gies iMBA — Asia Pacific Chapter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-export default function App() {
-  const countries = [
-    { name: 'South Korea', flag: '🇰🇷' },
-    { name: 'Japan', flag: '🇯🇵' },
-    { name: 'China', flag: '🇨🇳' },
-    { name: 'Singapore', flag: '🇸🇬' },
-    { name: 'Australia', flag: '🇦🇺' },
-    { name: 'India', flag: '🇮🇳' },
-    { name: 'Taiwan', flag: '🇹🇼' },
-    { name: 'Hong Kong', flag: '🇭🇰' },
-  ];
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #13294B;
+      background: #ffffff;
+    }
 
-  const resources = [
-    {
-      title: 'iMBA Program Portal',
-      description: 'Access course materials and program resources',
-      icon: GraduationCap,
-      href: '#',
-      color: 'orange',
-    },
-    {
-      title: 'Gies LinkedIn',
-      description: 'Official Gies College of Business LinkedIn page',
-      icon: Linkedin,
-      href: '#',
-      color: 'navy',
-    },
-    {
-      title: 'APAC LinkedIn Page',
-      description: 'Connect with the APAC chapter community',
-      icon: Users,
-      href: '#',
-      color: 'orange',
-    },
-    {
-      title: 'Contact Chapter President',
-      description: 'Reach out for questions or collaboration',
-      icon: ExternalLink,
-      href: '#',
-      color: 'navy',
-    },
-    {
-      title: 'iDegrees GBA',
-      description: 'The Graduate Business Association for all Gies iDegrees programs — iMBA, iMSA, and iMSM',
-      icon: Globe,
-      href: 'https://www.idegreesgba.org',
-      color: 'orange',
-    },
-  ];
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
 
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-[#13294B] text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1738573626155-56c83aafe7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhJTIwcGFjaWZpYyUyMG1hcCUyMGJsdWV8ZW58MXx8fHwxNzc0OTcyOTA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-6">
-              Gies iMBA — Asia Pacific Chapter
-            </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl mb-8 text-white/90">
-              Connecting iMBA, iMSA, and iMSM students and alumni across the Asia-Pacific region.
-            </p>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#E84A27] hover:bg-[#d43d1a] text-white px-8 py-4 rounded-lg transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-              Join the Community
-            </a>
-          </div>
-        </div>
-      </section>
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
 
-      {/* About Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl mb-6 text-[#13294B] text-center">
-              What is Gies APAC?
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Gies APAC is a student-led regional chapter supporting Gies graduate students across the Asia-Pacific region through networking opportunities, shared resources, and community events. Open to all current students and alumni in the iMBA, iMSA, and iMSM programs. Gies APAC is also a proud member of the iGBA International Chapter Leadership committee, which coordinates Gies iDegrees engagement and activities for members located outside of North America.
-            </p>
-          </div>
-        </div>
-      </section>
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
 
-      {/* Community Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl text-center mb-12 text-[#13294B]">
-            Our Community Across APAC
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
-            {countries.map((country) => (
-              <div
-                key={country.name}
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center border border-gray-100"
-              >
-                <div className="text-5xl mb-3">{country.flag}</div>
-                <h3 className="text-[#13294B]">{country.name}</h3>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-gray-700">
-            Don't see your country? Get in touch.
-          </p>
-        </div>
-      </section>
+    p {
+      line-height: 1.6;
+    }
 
-      {/* Events Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl text-center mb-12 text-[#13294B]">
-            Upcoming Events & Meetups
-          </h2>
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg text-gray-700 mb-6">
-              No upcoming events scheduled. Follow our LinkedIn page for the latest announcements.
-            </p>
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#E84A27] hover:bg-[#d43d1a] text-white px-8 py-4 rounded-lg transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-              Follow on LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-      {/* Resources Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl text-center mb-12 text-[#13294B]">
-            Resources
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {resources.map((resource, index) => (
-              <a
-                key={index}
-                href={resource.href}
-                target={resource.href.startsWith('http') ? '_blank' : undefined}
-                rel={resource.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className={`p-6 rounded-lg shadow-sm hover:shadow-md transition-all group ${
-                  resource.color === 'orange'
-                    ? 'bg-[#E84A27] text-white hover:bg-[#d43d1a]'
-                    : 'bg-[#13294B] text-white hover:bg-[#0f1f3a]'
-                }`}
-              >
-                <resource.icon className="w-8 h-8 mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg mb-2">{resource.title}</h3>
-                <p className="text-sm opacity-90">{resource.description}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-      {/* Footer */}
-      <footer className="bg-[#13294B] text-white py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-white/80">
-            Gies APAC is a student-led organization. Not officially affiliated with the University of Illinois Gies College of Business.
-          </p>
-        </div>
-      </footer>
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background-color: #13294B;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image: url('https://images.unsplash.com/photo-1738573626155-56c83aafe7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhJTIwcGFjaWZpYyUyMG1hcCUyMGJsdWV8ZW58MXx8fHwxNzc0OTcyOTA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 5rem 1rem;
+      text-align: center;
+      max-width: 896px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #E84A27;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #d43d1a;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 4rem 1rem;
+    }
+
+    .section-bg-gray {
+      background-color: #f9fafb;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #13294B;
+      margin-bottom: 3rem;
+    }
+
+    /* About Section */
+    .about-content {
+      max-width: 896px;
+      margin: 0 auto;
+    }
+
+    .about-content p {
+      font-size: 1.125rem;
+      color: #374151;
+    }
+
+    /* Countries Grid */
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .country-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border: 1px solid #f3f4f6;
+      transition: box-shadow 0.3s;
+    }
+
+    .country-card:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .country-flag {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .country-name {
+      color: #13294B;
+    }
+
+    .countries-note {
+      text-align: center;
+      color: #374151;
+    }
+
+    /* Events Section */
+    .events-content {
+      max-width: 672px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .events-content p {
+      font-size: 1.125rem;
+      color: #374151;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Resources Grid */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+    }
+
+    .resource-card {
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      display: block;
+    }
+
+    .resource-card:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .resource-card-orange {
+      background-color: #E84A27;
+      color: white;
+    }
+
+    .resource-card-orange:hover {
+      background-color: #d43d1a;
+    }
+
+    .resource-card-navy {
+      background-color: #13294B;
+      color: white;
+    }
+
+    .resource-card-navy:hover {
+      background-color: #0f1f3a;
+    }
+
+    .resource-icon {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .resource-card:hover .resource-icon {
+      transform: scale(1.1);
+    }
+
+    .resource-title {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .resource-description {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #13294B;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Icon styles */
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+
+      .countries-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-content {
+        padding: 7rem 1.5rem;
+      }
+
+      .section {
+        padding: 5rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2.25rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 2rem;
+      }
+
+      .countries-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .resources-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero-content {
+        padding: 9rem 2rem;
+      }
+
+      .section {
+        padding: 6rem 2rem;
+      }
+
+      h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .resources-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <h1>Gies iMBA — Asia Pacific Chapter</h1>
+      <p class="hero-subtitle">Connecting iMBA, iMSA, and iMSM students and alumni across the Asia-Pacific region.</p>
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        Join the Community
+      </a>
     </div>
-  );
-}
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="section-title">What is Gies APAC?</h2>
+        <p>
+          Gies APAC is a student-led regional chapter supporting Gies graduate students across the Asia-Pacific region through networking opportunities, shared resources, and community events. Open to all current students and alumni in the iMBA, iMSA, and iMSM programs. Gies APAC is also a proud member of the iGBA International Chapter Leadership committee, which coordinates Gies iDegrees engagement and activities for members located outside of North America.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="section section-bg-gray">
+    <div class="container">
+      <h2 class="section-title">Our Community Across APAC</h2>
+      <div class="countries-grid">
+        <div class="country-card">
+          <div class="country-flag">🇰🇷</div>
+          <h3 class="country-name">South Korea</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇯🇵</div>
+          <h3 class="country-name">Japan</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇨🇳</div>
+          <h3 class="country-name">China</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇸🇬</div>
+          <h3 class="country-name">Singapore</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇦🇺</div>
+          <h3 class="country-name">Australia</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇮🇳</div>
+          <h3 class="country-name">India</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇹🇼</div>
+          <h3 class="country-name">Taiwan</h3>
+        </div>
+        <div class="country-card">
+          <div class="country-flag">🇭🇰</div>
+          <h3 class="country-name">Hong Kong</h3>
+        </div>
+      </div>
+      <p class="countries-note">Don't see your country? Get in touch.</p>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Upcoming Events & Meetups</h2>
+      <div class="events-content">
+        <p>No upcoming events scheduled. Follow our LinkedIn page for the latest announcements.</p>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="section section-bg-gray">
+    <div class="container">
+      <h2 class="section-title">Resources</h2>
+      <div class="resources-grid">
+        <!-- iMBA Program Portal -->
+        <a href="#" class="resource-card resource-card-orange">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <h3 class="resource-title">iMBA Program Portal</h3>
+          <p class="resource-description">Access course materials and program resources</p>
+        </a>
+
+        <!-- Gies LinkedIn -->
+        <a href="#" class="resource-card resource-card-navy">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <h3 class="resource-title">Gies LinkedIn</h3>
+          <p class="resource-description">Official Gies College of Business LinkedIn page</p>
+        </a>
+
+        <!-- APAC LinkedIn Page -->
+        <a href="#" class="resource-card resource-card-orange">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <h3 class="resource-title">APAC LinkedIn Page</h3>
+          <p class="resource-description">Connect with the APAC chapter community</p>
+        </a>
+
+        <!-- Contact Chapter President -->
+        <a href="#" class="resource-card resource-card-navy">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <h3 class="resource-title">Contact Chapter President</h3>
+          <p class="resource-description">Reach out for questions or collaboration</p>
+        </a>
+
+        <!-- iDegrees GBA -->
+        <a href="https://www.idegreesgba.org" target="_blank" rel="noopener noreferrer" class="resource-card resource-card-orange">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <h3 class="resource-title">iDegrees GBA</h3>
+          <p class="resource-description">The Graduate Business Association for all Gies iDegrees programs — iMBA, iMSA, and iMSM</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Gies APAC is a student-led organization. Not officially affiliated with the University of Illinois Gies College of Business.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
