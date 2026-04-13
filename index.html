@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gies iMBA — Asia Pacific Chapter</title>
+  <title>Gies APAC Chapter</title>
   <style>
     * {
       margin: 0;
@@ -66,7 +66,7 @@
       position: absolute;
       inset: 0;
       opacity: 0.1;
-      background-image: url('https://images.unsplash.com/photo-1738573626155-56c83aafe7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhJTIwcGFjaWZpYyUyMG1hcCUyMGJsdWV8ZW58MXx8fHwxNzc0OTcyOTA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral');
+      background-image: url('https://images.unsplash.com/photo-1738573626155-56c83aafe7ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2lhJTIwcGFjaWZpYyUyMG1hcCUyMGJsdWV8ZW58MXx8fHwxNzc0OTcyOTA5fDA&ixlib=rb-4.1.0&q=80&w=1080');
       background-size: cover;
       background-position: center;
     }
@@ -90,6 +90,13 @@
       margin-bottom: 2rem;
     }
 
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -107,6 +114,41 @@
 
     .btn-primary:hover {
       background-color: #d43d1a;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: transparent;
+      color: white;
+      padding: 0.875rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: white;
+    }
+
+    .btn-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn-descriptor {
+      display: block;
+      font-size: 0.78rem;
+      opacity: 0.8;
+      font-weight: 400;
+      margin-top: 0.15rem;
     }
 
     /* Section Styles */
@@ -184,6 +226,13 @@
       margin-bottom: 1.5rem;
     }
 
+    .events-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
     /* Resources Grid */
     .resources-grid {
       display: grid;
@@ -259,8 +308,7 @@
     .icon {
       width: 1.25rem;
       height: 1.25rem;
-      display: inline-block;
-      vertical-align: middle;
+      flex-shrink: 0;
     }
 
     /* Responsive */
@@ -280,6 +328,17 @@
 
       .hero-content {
         padding: 7rem 1.5rem;
+      }
+
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .events-buttons {
+        flex-direction: row;
+        justify-content: center;
       }
 
       .section {
@@ -338,16 +397,31 @@
   <section class="hero">
     <div class="hero-background"></div>
     <div class="hero-content">
-      <h1>Gies iMBA — Asia Pacific Chapter</h1>
+      <!-- CHANGE 1: Title updated to "Gies APAC Chapter" -->
+      <h1>Gies APAC Chapter</h1>
       <p class="hero-subtitle">Connecting iMBA, iMSA, and iMSM students and alumni across the Asia-Pacific region.</p>
-      <a href="https://www.linkedin.com/groups/15834015/" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-          <rect x="2" y="9" width="4" height="12"></rect>
-          <circle cx="4" cy="4" r="2"></circle>
-        </svg>
-        Join the Community
-      </a>
+      <div class="hero-buttons">
+        <!-- CHANGE 2: iGBA International Chapter button added BEFORE "Join the Community" -->
+        <a href="https://www.linkedin.com/groups/11802322/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span>
+            <span class="btn-label">iGBA International Chapter — LinkedIn Group</span>
+            <span class="btn-descriptor">The parent body coordinating all iGBA regional chapters worldwide.</span>
+          </span>
+        </a>
+        <a href="https://www.linkedin.com/groups/15834015/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          Join the Community
+        </a>
+      </div>
     </div>
   </section>
 
@@ -356,8 +430,9 @@
     <div class="container">
       <div class="about-content">
         <h2 class="section-title">What is Gies APAC?</h2>
+        <!-- CHANGE 5: "member of the iGBA International Chapter Leadership committee" → "operates under the iGBA International Chapter Leadership Committee" -->
         <p>
-          Gies APAC is a student-led regional chapter supporting Gies graduate students across the Asia-Pacific region through networking opportunities, shared resources, and community events. Open to all current students and alumni in the iMBA, iMSA, and iMSM programs. Gies APAC is also a proud member of the iGBA International Chapter Leadership committee, which coordinates Gies iDegrees engagement and activities for members located outside of North America.
+          Gies APAC is a student-led regional chapter supporting Gies graduate students across the Asia-Pacific region through networking opportunities, shared resources, and community events. Open to all current students and alumni in the iMBA, iMSA, and iMSM programs. Gies APAC also operates under the iGBA International Chapter Leadership Committee, which coordinates Gies iDegrees engagement and activities for members located outside of North America.
         </p>
       </div>
     </div>
@@ -408,17 +483,29 @@
   <!-- Events Section -->
   <section class="section">
     <div class="container">
-      <h2 class="section-title">Upcoming Events & Meetups</h2>
+      <h2 class="section-title">Upcoming Events &amp; Meetups</h2>
+      <!-- CHANGE 3: Added iGBA Events Calendar button alongside LinkedIn -->
       <div class="events-content">
-        <p>No upcoming events scheduled. Follow our LinkedIn page for the latest announcements.</p>
-        <a href="https://www.linkedin.com/groups/11802322/" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-          Follow on LinkedIn
-        </a>
+        <p>No upcoming APAC events scheduled. Browse the iGBA Events Calendar for broader community events, or follow our LinkedIn page for the latest chapter announcements.</p>
+        <div class="events-buttons">
+          <a href="https://www.idegreesgba.org/events" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            iGBA Events Calendar
+          </a>
+          <a href="https://www.linkedin.com/groups/11802322/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            Follow on LinkedIn
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -427,21 +514,23 @@
   <section class="section section-bg-gray">
     <div class="container">
       <h2 class="section-title">Resources</h2>
+      <!-- CHANGE 4: iDegrees GBA moved to position 3; Contact card renamed to "iGBA International Chapter — Contact" -->
       <div class="resources-grid">
-        <!-- iMBA Program Portal -->
-        <a href="https://giesonline.illinois.edu/explore-programs/online-mba" class="resource-card resource-card-orange">
-  <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-  </svg>
-  <h3 class="resource-title">iMBA Program Portal</h3>
-  <p class="resource-description">Access course materials and program resources</p>
-</a>
 
-        <!-- Gies LinkedIn -->
+        <!-- 1. iMBA Program Portal (unchanged) -->
+        <a href="https://giesonline.illinois.edu/explore-programs/online-mba" class="resource-card resource-card-orange">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <h3 class="resource-title">iMBA Program Portal</h3>
+          <p class="resource-description">Access course materials and program resources</p>
+        </a>
+
+        <!-- 2. Gies LinkedIn (unchanged) -->
         <a href="https://www.linkedin.com/showcase/gies-online/" class="resource-card resource-card-navy">
           <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
             <rect x="2" y="9" width="4" height="12"></rect>
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
@@ -449,29 +538,7 @@
           <p class="resource-description">Official Gies College of Business LinkedIn page</p>
         </a>
 
-        <!-- APAC LinkedIn Page -->
-        <a href="https://www.linkedin.com/groups/15834015/" class="resource-card resource-card-orange">
-          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-          <h3 class="resource-title">APAC LinkedIn Page</h3>
-          <p class="resource-description">Connect with the APAC chapter community</p>
-        </a>
-
-        <!-- Contact Chapter President -->
-        <a href="https://www.linkedin.com/groups/11802322/" class="resource-card resource-card-navy">
-          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-            <polyline points="15 3 21 3 21 9"></polyline>
-            <line x1="10" y1="14" x2="21" y2="3"></line>
-          </svg>
-          <h3 class="resource-title">Contact Chapter President</h3>
-          <p class="resource-description">Reach out for questions or collaboration</p>
-        </a>
-
-        <!-- iDegrees GBA -->
+        <!-- 3. iDegrees GBA — moved UP from position 5 -->
         <a href="https://www.idegreesgba.org" target="_blank" rel="noopener noreferrer" class="resource-card resource-card-orange">
           <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10"></circle>
@@ -481,6 +548,29 @@
           <h3 class="resource-title">iDegrees GBA</h3>
           <p class="resource-description">The Graduate Business Association for all Gies iDegrees programs — iMBA, iMSA, and iMSM</p>
         </a>
+
+        <!-- 4. APAC LinkedIn Page — moved DOWN from position 3 -->
+        <a href="https://www.linkedin.com/groups/15834015/" class="resource-card resource-card-navy">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <h3 class="resource-title">APAC LinkedIn Page</h3>
+          <p class="resource-description">Connect with the APAC chapter community</p>
+        </a>
+
+        <!-- 5. iGBA International Chapter — Contact (renamed from "Contact Chapter President") -->
+        <a href="https://www.linkedin.com/groups/11802322/" class="resource-card resource-card-orange">
+          <svg class="resource-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <h3 class="resource-title">iGBA International Chapter — Contact</h3>
+          <p class="resource-description">Reach out for questions or collaboration</p>
+        </a>
+
       </div>
     </div>
   </section>
